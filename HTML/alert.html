@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- sweetalert  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>모달 팝업 창</title>
+  </head>
+  <body>
+    <script>
+      swal({
+        title: "제출 하시겠습니까?",
+        text: "",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          swal("제출 완료 되었습니다. 감사합니다.", {
+            icon: "success",
+          }).then(() => {
+            setTimeout(() => {
+              window.location.href = "../HTML/board.html";
+            }, 1500); //
+          });
+        } else {
+          swal("접수가 취소되었습니다.").then(() => {
+            setTimeout(() => {
+              window.location.href = "../HTML/board.html";
+            }, 1500); //
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
